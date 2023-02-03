@@ -5,12 +5,13 @@ const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const app = express();
 
 app.post('/sms', (req, res) => {
-  const twiml = new MessagingResponse();
-
-  twiml.message('Thank you for sending message!');
-
-  res.type('text/xml').send(twiml.toString());
-});
+    const twiml = new MessagingResponse();
+  
+    const message = twiml.message();
+    message.body('Thank you for sending messages!');
+  
+    res.type('text/xml').send(twiml.toString());
+  });
 
 app.post('/voice', (request, response) => {
     // Use the Twilio Node.js SDK to build an XML response
