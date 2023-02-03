@@ -1,5 +1,6 @@
 const express = require('express');
 const { MessagingResponse } = require('twilio').twiml;
+const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
 const app = express();
 
